@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import MovieCard from "../components/MovieCard";
 
 {/* React icons */}
-import { FaWallet, FaPencilAlt } from "react-icons/fa";
+import { FaWallet } from "react-icons/fa";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { FaClock } from "react-icons/fa6";
 
@@ -30,32 +30,20 @@ const Movie = () => {
     getMovie(moiveUrl)
   }, [])
 
-  return <div className="movie-page">{movie && <>
-    <MovieCard movie={movie} showLink={false} />
-    <p className="tagline">{movie.tagline}</p>
-    <div className="info">
-      <h3>
-        <FaWallet /> Budget:
-      </h3>
-      <p>{movie.budget}</p>
+  return <div className="flex flex-col gap-9 px-12">
+    {movie && <><MovieCard movie={movie} showLink={false} />
+    <p>{movie.tagline}</p>
+    <div>
+      <p className="flex items-center gap-3"> <FaWallet /> Budget:{movie.budget}</p>
     </div>
-    <div className="info">
-      <h3>
-        <BsGraphUpArrow /> Revenue:
-      </h3>
-      <p>{movie.revenue}</p>
+    <div>
+      <p className="flex items-center gap-3"><BsGraphUpArrow /> Revenue: {movie.revenue}</p>
     </div>
-    <div className="info">
-      <h3>
-        <FaClock /> Runtime:
-      </h3>
-      <p>{movie.runtime} minutes</p>
+    <div>
+      <p className="flex items-center gap-3"><FaClock /> Runtime: {movie.runtime} minutes</p>
     </div>
-    <div className="info-description">
-      <h3>
-        <FaPencilAlt /> Description:
-      </h3>
-      <p>{movie.overview}</p>
+    <div>
+      <p className="flex items-center gap-3"> Description: {movie.overview}</p>
     </div>
   </>}</div>
   
