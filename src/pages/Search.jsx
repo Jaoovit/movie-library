@@ -26,9 +26,9 @@ const Search = () => {
 
   return (
     <div>
-      <div>
-        <h2>Results for: <span>{query}</span></h2>
-        <div>
+      <div className="flex flex-col gap-12 items-center">
+        <h2 className="text-4xl">Results for: <span className="text-amber-400">{query}</span></h2>
+        <div className="flex flex-wrap justify-center items-center gap-12">
           {searchMovies.length > 0 && searchMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
         </div>
       </div>

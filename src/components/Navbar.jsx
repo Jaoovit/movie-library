@@ -18,7 +18,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="flex justify-between p-9">
+    <div className="flex flex-col sm:flex-row gap-9 items-center justify-between p-9">
       <Link to="/" className="transition flex items-center gap-3 text-3xl hover:text-blue-950 duration-200"><MdMovieFilter />Movie Library</Link>
       <form className="flex gap-9" onSubmit={handleSubmit}>
         <input className="rounded-md p-2 border shadow-sm border-slate-300 focus:outline-none focus:border-blue-950" type="text" placeholder="Search a movie" value={search} onChange={(e) => {setSearch(e.target.value)}}/>
