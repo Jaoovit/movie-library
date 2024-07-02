@@ -16,8 +16,8 @@ const movies = import.meta.env.VITE_API_MOVIE;
 
 const Movie = () => {
 
+  const { id } = useParams()
   const [movie, setMovie] = useState(null);
-  const {id} = useParams()
 
   const getMovie = async (url) => {
     const res = await fetch(url);
@@ -33,6 +33,7 @@ const Movie = () => {
 
   return (
     <div>
+      {movie === null && <p>Loading...</p>}
       {movie && <div><MovieCard movie={movie} showLink={false}/></div>}
       <div>
         <h3><FaWallet /> Budget:</h3>

@@ -10,10 +10,10 @@ function App() {
  
 
   return (
-    <>
+    <div>
       <NavBar />
       <Outlet />
-    </>
+    </div>
   )
 }
 
