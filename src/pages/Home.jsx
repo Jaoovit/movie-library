@@ -21,9 +21,9 @@ const Home = () => {
 
 
   return (
-    <div>
-      <h2>Best Movies</h2>
-      <div>
+    <div className="flex flex-col gap-12 items-center">
+      <h2 className="text-4xl">Best Movies</h2>
+      <div className="flex flex-wrap justify-center items-center gap-12">
         {bestMovies.length === 0 && <p>Loading...</p>}
         {bestMovies.length > 0 && bestMovies.map((movie) => <MovieCard key={movie.id} movie={movie}/>)}
       </div>
