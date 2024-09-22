@@ -1,6 +1,5 @@
 {/*JSX documents*/}
 import NavBar from './components/Navbar'
-import Footer from './components/Footer'
 
 {/*Hook to navigate in the pages*/}
 import { Outlet } from 'react-router-dom'
@@ -14,7 +13,6 @@ function App() {
     <div>
       <NavBar />
       <Outlet />
-      <Footer />
     </div>
   )
 }
